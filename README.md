@@ -32,7 +32,7 @@
 
 ## 3. Arhitectură și fluxuri (diagrame)
 
-Diagramele sunt în **Mermaid** (randare automată pe GitHub). Pentru export în format dedicat (ex. draw.io / diagrams.net): deschideți [mermaid.live](https://mermaid.live), lipiți codul din blocurile de mai jos, apoi **Export** → PNG sau SVG [2].
+Diagramele sunt în **Mermaid** (randare automată pe GitHub).
 
 ### 3.1. Componente și dependențe
 
@@ -93,17 +93,17 @@ sequenceDiagram
 
 ## 4. Configurație hardware și software
 
-### 4.1. Hardware (exemplu — actualizați după stația folosită la demonstrație)
+### 4.1. Hardware 
 
 | Resursă | Valoare (completați) |
 |---------|----------------------|
-| Procesor | *ex. Intel Core i5 / AMD Ryzen 5* |
-| RAM | *ex. 8 / 16 GB* |
-| OS | Windows 10 / 11 (64-bit) |
+| Procesor | AMD Ryzen 5* |
+| RAM | 32 GB |
+| OS | Windows 10 |
 
-**Mașină virtuală:** nu este necesară pentru acest proiect; rulare directă pe sistemul gazdă.
 
-### 4.2. Software și versiuni (înregistrate la data documentării)
+
+### 4.2. Software și versiuni
 
 | Tool / pachet | Rol | Versiune verificată |
 |-----------------|-----|------------------------|
@@ -111,9 +111,8 @@ sequenceDiagram
 | pytest | Framework teste | 8.4.0 |
 | pytest-cov | Acoperire cod | 7.1.0 |
 | google-genai | Client API Gemini | 1.73.1 |
-| Editor IDE | Dezvoltare | *ex. VS Code / Cursor* |
+| Editor IDE | Dezvoltare | * VS Code * |
 
-Versiunile exacte pe calculatorul vostru:
 
 ```text
 python --version
@@ -122,26 +121,8 @@ python -m pip show pytest pytest-cov google-genai
 
 ---
 
-## 5. Structura repository-ului
 
-```text
-Proiect_T10_AI/
-├── README.md                 # acest fișier
-├── requirements.txt
-├── pytest.ini
-├── conftest.py               # hook pytest — ordonare după criticitate
-├── bank_account.py           # cod sub test
-├── criticality.py            # analiză puncte critice + CLI
-├── ai_test_generator.py      # îmbunătățire teste via IA
-├── test_manual.py            # teste inițiale (intrare pentru IA)
-├── test_bank_account_V2.py   # suită îmbunătățită
-└── docs/
-    └── capturi/              # plasați aici capturile cerute la curs (vezi §8)
-```
-
----
-
-## 6. Instalare și variabile de mediu
+## 5. Instalare și variabile de mediu
 
 În rădăcina proiectului (recomandat: mediu virtual):
 
@@ -151,7 +132,7 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-Pentru generatorul cu IA, setați cheia API (nu o comiteți în repo):
+
 
 ```powershell
 $env:GOOGLE_API_KEY = "cheia-dvs"
@@ -163,7 +144,6 @@ $env:GEMINI_API_KEY = "cheia-dvs"
 python ai_test_generator.py
 ```
 
-Opțional, modulul sursă pentru analiza de criticitate (implicit se caută `bank_account.py` lângă teste):
 
 ```powershell
 $env:CRITICALITY_SOURCE = "bank_account.py"
@@ -171,7 +151,7 @@ $env:CRITICALITY_SOURCE = "bank_account.py"
 
 ---
 
-## 7. Rularea testelor și a acoperirii
+## 6. Rularea testelor și a acoperirii
 
 Pe Windows, `pytest` poate lipsi din PATH; folosiți modulul Python:
 
@@ -200,22 +180,10 @@ python criticality.py bank_account.py
 
 ---
 
-## 8. Capturi de ecran (de adăugat în `docs/capturi/`)
 
-Pentru conformarea cu cerințele cursului, exportați și includeți în repository (PNG/SVG din tool-uri dedicate, nu fotografii) [3]:
+## 7. Comparație rezultate / tool-uri (interpretare)
 
-1. Rulare `python -m pytest test_bank_account_V2.py` (rezumat passed).
-2. Rulare cu `--cov=bank_account --cov-branch --cov-report=term-missing` (tabel coverage).
-3. Ieșire `python criticality.py bank_account.py` (puncte critice).
-4. (Opțional) Rulare `ai_test_generator.py` după setarea cheii (fără a expune cheia în captură).
-
-Numiți fișierele sugestiv, ex.: `pytest-v2-passed.png`, `coverage-v2-100.png`, `criticality-report.png`.
-
----
-
-## 9. Comparație rezultate / tool-uri (interpretare)
-
-### 9.1. Teste manuale vs. suită îmbunătățită (același modul `bank_account.py`)
+### 7.1. Teste manuale vs. suită îmbunătățită (același modul `bank_account.py`)
 
 | Metrică (`bank_account.py`) | Doar `test_manual.py` | `test_bank_account_V2.py` |
 |-----------------------------|----------------------|---------------------------|
@@ -226,7 +194,7 @@ Numiți fișierele sugestiv, ex.: `pytest-v2-passed.png`, `coverage-v2-100.png`,
 
 **Interpretare:** testele manuale acoperă fluxurile „fericite” și fonduri insuficiente, dar nu exercită ramurile care aruncă `ValueError` la depunere/retragere cu sumă nevalidă. Suita extinsă (BVA + excepții) elimină golurile și atinge acoperire completă pe modulul dat, ceea ce se reflectă în `Miss = 0` și `BrPart = 0` [1].
 
-### 9.2. Rolul analizei de criticitate vs. IA
+### 7.2. Rolul analizei de criticitate vs. IA
 
 | Aspect | `criticality.py` | `ai_test_generator.py` |
 |--------|------------------|------------------------|
@@ -238,9 +206,9 @@ Numiți fișierele sugestiv, ex.: `pytest-v2-passed.png`, `coverage-v2-100.png`,
 
 ---
 
-## 10. Fragmente de cod relevante
+## 8. Fragmente de cod relevante
 
-### 10.1. Exemplu decizii în codul sub test
+### 8.1. Exemplu decizii în codul sub test
 
 ```python
 # bank_account.py — ramuri: validare sumă, fonduri insuficiente
@@ -251,7 +219,7 @@ def deposit(self, amount):
     return self.balance
 ```
 
-### 10.2. Hook de priorizare (idee)
+### 8.2. Hook de priorizare (idee)
 
 ```python
 # conftest.py — reordonare după scor din criticality.py
@@ -264,7 +232,7 @@ def pytest_collection_modifyitems(config, items):
 
 ---
 
-## 11. Referințe bibliografice
+## 9. Referințe bibliografice
 
 [1] Python Software Foundation, *Coverage.py — Measurement*, documentație pytest-cov și branch coverage. Disponibil: https://coverage.readthedocs.io/ (accesat 2026).
 
