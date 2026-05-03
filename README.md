@@ -5,9 +5,7 @@
 | | |
 |---|---|
 | **Tema** | T10: utilizare IA pentru îmbunătățirea testelor unitare; identificarea punctelor critice și priorizarea testelor |
-| **Membri echipă** | *Completați: Nume Prenume (șef echipă — email), …* |
-| **Repository** | *Link GitHub / GitLab / Bitbucket după upload* |
-| **Formular curs** | [Google Forms — înregistrare echipă și temă](https://forms.gle/XYChPegcAdTDAeNU9) |
+| **Membri echipă** | Niculae Cosmin, Branzea Malina |
 
 ---
 
