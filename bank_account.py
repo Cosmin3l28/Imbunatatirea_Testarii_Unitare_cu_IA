@@ -12,6 +12,6 @@ class BankAccount:
         if amount <= 0:
             raise ValueError("Suma retrasă trebuie să fie pozitivă.")
         if amount > self.balance:
-            return False # Fonduri insuficiente
+            return False  # Fonduri insuficiente
         self.balance -= amount
         return True
