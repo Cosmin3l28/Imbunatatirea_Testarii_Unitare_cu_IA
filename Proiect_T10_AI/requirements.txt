@@ -1,0 +1,4 @@
+google-genai
+pytest
+pytest-cov
+mutmut

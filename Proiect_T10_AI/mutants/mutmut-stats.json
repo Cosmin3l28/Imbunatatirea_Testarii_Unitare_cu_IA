@@ -1,0 +1,73 @@
+{
+    "tests_by_mangled_function_name": {
+        "luhn_algo.x_luhn_digit": [
+            "test_ai_luhn.py::test_is_luhn_valid_amex",
+            "test_ai_luhn.py::test_generate_and_check",
+            "test_ai_luhn.py::test_luhn_digit",
+            "test_ai_luhn.py::test_luhn_checksum_with_nines_and_zeros",
+            "test_ai_luhn.py::test_generate_long_number_bva",
+            "test_ai_luhn.py::test_luhn_checksum_odd_length",
+            "test_ai_luhn.py::test_generate_minimum_length_bva",
+            "test_ai_luhn.py::test_is_luhn_valid_invalid_card",
+            "test_ai_luhn.py::test_luhn_checksum_even_length",
+            "test_ai_luhn.py::test_check_valid_prefix_length_invalid_luhn",
+            "test_ai_luhn.py::test_luhn_checksum_long_number_bva",
+            "test_ai_luhn.py::test_generate_empty_prefix_bva"
+        ],
+        "luhn_algo.x_luhn_checksum": [
+            "test_ai_luhn.py::test_is_luhn_valid_amex",
+            "test_ai_luhn.py::test_generate_and_check",
+            "test_ai_luhn.py::test_luhn_checksum_with_nines_and_zeros",
+            "test_ai_luhn.py::test_generate_long_number_bva",
+            "test_ai_luhn.py::test_luhn_checksum_odd_length",
+            "test_ai_luhn.py::test_generate_minimum_length_bva",
+            "test_ai_luhn.py::test_is_luhn_valid_invalid_card",
+            "test_ai_luhn.py::test_luhn_checksum_even_length",
+            "test_ai_luhn.py::test_check_valid_prefix_length_invalid_luhn",
+            "test_ai_luhn.py::test_luhn_checksum_long_number_bva",
+            "test_ai_luhn.py::test_generate_empty_prefix_bva"
+        ],
+        "luhn_algo.x_is_luhn_valid": [
+            "test_ai_luhn.py::test_is_luhn_valid_amex",
+            "test_ai_luhn.py::test_generate_and_check",
+            "test_ai_luhn.py::test_generate_long_number_bva",
+            "test_ai_luhn.py::test_generate_minimum_length_bva",
+            "test_ai_luhn.py::test_is_luhn_valid_invalid_card",
+            "test_ai_luhn.py::test_check_valid_prefix_length_invalid_luhn",
+            "test_ai_luhn.py::test_generate_empty_prefix_bva"
+        ],
+        "luhn_algo.x_generate": [
+            "test_ai_luhn.py::test_generate_and_check",
+            "test_ai_luhn.py::test_generate_long_number_bva",
+            "test_ai_luhn.py::test_generate_assert_nrand_zero",
+            "test_ai_luhn.py::test_generate_minimum_length_bva",
+            "test_ai_luhn.py::test_generate_assert_nrand_negative",
+            "test_ai_luhn.py::test_generate_empty_prefix_bva"
+        ],
+        "luhn_algo.x_check": [
+            "test_ai_luhn.py::test_check_invalid_prefix",
+            "test_ai_luhn.py::test_check_invalid_length",
+            "test_ai_luhn.py::test_check_valid_prefix_length_invalid_luhn",
+            "test_ai_luhn.py::test_generate_and_check"
+        ]
+    },
+    "duration_by_test": {
+        "test_ai_luhn.py::test_luhn_digit": 0.0006500750005216105,
+        "test_ai_luhn.py::test_is_luhn_valid_amex": 0.0005587850009760587,
+        "test_ai_luhn.py::test_generate_and_check": 0.00040663899926585145,
+        "test_ai_luhn.py::test_check_invalid_length": 0.0003296070008218521,
+        "test_ai_luhn.py::test_check_invalid_prefix": 0.0002767969999695197,
+        "test_ai_luhn.py::test_luhn_checksum_even_length": 0.00024472699988109525,
+        "test_ai_luhn.py::test_luhn_checksum_odd_length": 0.0004351440011305385,
+        "test_ai_luhn.py::test_luhn_checksum_with_nines_and_zeros": 0.00024812299943732796,
+        "test_ai_luhn.py::test_luhn_checksum_long_number_bva": 0.00045734500054095406,
+        "test_ai_luhn.py::test_is_luhn_valid_invalid_card": 0.0002784889993563411,
+        "test_ai_luhn.py::test_generate_assert_nrand_negative": 0.00035067699900537264,
+        "test_ai_luhn.py::test_generate_assert_nrand_zero": 0.0006351669999276055,
+        "test_ai_luhn.py::test_generate_minimum_length_bva": 0.0004514740003287443,
+        "test_ai_luhn.py::test_generate_empty_prefix_bva": 0.0006585720011571539,
+        "test_ai_luhn.py::test_generate_long_number_bva": 0.00035714899968297686,
+        "test_ai_luhn.py::test_check_valid_prefix_length_invalid_luhn": 0.00033698900006129406
+    },
+    "stats_time": 0.488355828
+}
